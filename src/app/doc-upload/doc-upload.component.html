@@ -1,0 +1,27 @@
+<div>
+   <label class="form-control">AADHAR Number</label>
+   <input type="number" class="form-control" [(ngModel)]="anumber"/>
+
+   <label class="form-control">PAN Number</label>
+   <input type="text" class="form-control" [(ngModel)]="pnumber"/>
+
+   <label>Upload AADHAR CARD</label>
+   <input type="file" (change)="onFileSelected1($event)"/>
+
+   <label>Upload PAN CARD</label>
+   <input type="file" (change)="onFileSelected2($event)"/>
+
+   <label>Upload LOA</label>
+   <input type="file" (change)="onFileSelected3($event)"/>
+
+   <label>Upload LOC</label>
+   <input type="file" (change)="onFileSelected4($event)"/>
+
+   <label>Upload Voter Id Card</label>
+   <input type="file" (change)="onFileSelected5($event)"/>
+
+   <label>Upload Agreement of Sale</label>
+   <input type="file" (change)="onFileSelected6($event)"/>
+
+   <button class="btn btn-danger" (click)="submitForm()">submit appplication proposal</button>
+</div>

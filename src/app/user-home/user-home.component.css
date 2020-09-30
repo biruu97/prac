@@ -1,0 +1,22 @@
+div
+{
+    margin-left:250px;
+    margin-right:250px;
+    padding: 20px;
+}
+
+h1
+{
+    margin-left: 500px;
+}
+
+.btnapply
+{
+    float:left;
+    margin-left: 100px;
+}
+
+table,th,td
+{
+    border:1px solid black;
+}

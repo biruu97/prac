@@ -1,0 +1,38 @@
+div
+{
+    position: relative;
+    float: left;
+    background-color: ghostwhite;
+}
+
+#emiCalculator
+{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 90px;
+    margin-bottom: 50px;
+}
+
+#eligibilityCalculator
+{
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
+
+h2
+{
+    margin-left: 45px;
+    font-size: 20px;
+}
+
+h3
+{
+    font-size: 15px;
+}
+span
+{
+    margin-left: 60px;
+    font-size: 30px;
+}

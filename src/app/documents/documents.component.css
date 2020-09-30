@@ -1,0 +1,22 @@
+
+h2
+{
+    margin-left: 65px;
+    font-style: normal;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+li
+{
+    font-style: normal;
+    font-family:'Arial Narrow Bold';
+}
+
+div
+{
+    padding: 20px 20px 20px 20px;
+    background-color:#F0FFF9;
+    margin-left:350px;
+    margin-right:300px;
+}

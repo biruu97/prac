@@ -1,0 +1,49 @@
+<h1>Welcome</h1>
+<br><br>
+<button class="btn btn-success btnapply" (click)="toggleHistories1()">Show/Hide History</button>
+<button class="btn btn-success btnapply" (click)="toggleHistories2()">Show/Hide Bank Details</button>
+<button class="btn btn-success btnapply" (click)="toggleHistories3()">Show/Hide Loan Details</button>
+<button class="btn btn-primary btnapply" (click)="applyNow()">Apply Now</button>
+<br><br><br>
+
+<div *ngIf="flag1==1 && PrevRec!=null">
+    <table>
+        <tr>
+            <th>Application ID</th>
+            <th>Status of Application</th>
+        </tr>
+    
+        <tr *ngFor="let rec of PrevRec">
+            <td>{{rec.appId}}</td>
+            <td>{{rec.status}}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="flag2==1 && BankDet!=null">
+    <table>
+        <tr>
+            <th>Application Id</th>
+            <th>Account No</th>
+            <th>ifsc</th>
+        </tr>
+    
+        <tr *ngFor="let rec of BankDet">
+            <td>{{rec.appId}}</td>
+            <td>{{rec.accNo}}</td>
+            <td>{{rec.ifsc}}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="flag3==1 && LoanDet!=null">
+    <table>
+        <tr>
+            <th>Application Id</th>
+            <th>Loan Amount</th>
+        </tr>
+    
+        <tr *ngFor="let ld of LoanDet">
+            <td>{{ld.appId}}</td>
+            <td>{{ld.loanAsked}}</td>
+        </tr>
+    </table>
+</div>

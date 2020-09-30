@@ -1,0 +1,37 @@
+div
+{
+    float: left;
+}
+#blockLogin
+{
+    margin-left: 250px;
+    background-color: ghostwhite;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 30px;
+}
+
+#blockRegister
+{
+    margin-left: 300px;
+    background-color: ghostwhite;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 30px;
+}
+
+button
+{
+    margin-left:40px;
+}
+
+h2
+{
+    margin-left: 15px;
+}
+
+select
+{
+    margin-left: 50px;
+}
+

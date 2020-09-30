@@ -1,0 +1,41 @@
+<div id="blockLogin">
+    <h2>Login Here</h2>
+    <br>
+    <label class="form-control">email:</label>
+    <input class="form-control" type="email" required [(ngModel)]="userlogin.email">
+    <br>
+    <label class="form-control">password:</label>
+    <input class="form-control" type="password" required [(ngModel)]="userlogin.password">
+    <br>
+    <button class="btn btn-primary" (click)="doLogin()">Login</button>
+    <br>
+    <br>
+    <button class="btn btn-danger" (click)="forgotpass()">Change Password</button>
+    <br><br>
+    <span class="alert-text">{{flag}}</span>
+</div>
+<div id="blockRegister">
+    <h2>Register Here</h2>
+    <br>
+    <label class="form-control">Enter email</label>
+    <input class="form-control" type="email" required [(ngModel)]="user.email">
+    <br>
+    <label class="form-control">Enter password</label>
+    <input class="form-control" type="password" required [(ngModel)]="user.password" #pass="ngModel">
+    <br>
+    <label class="form-control">Retype password</label>
+    <input class="form-control" type="password" required [(ngModel)]="rePass"  #repass="ngModel">
+    <br>
+    <label class="form-control">Choose Priviledge</label>
+    <select [(ngModel)]="user.privilege">
+        <option value="user">user</option>
+        <option value="admin">admin</option>
+    </select>
+    <br>
+    <br>
+    <button class="btn btn-primary" (click)="doRegister()" [disabled]="pass.value!=repass.value">Register</button>
+    <br>
+    <br>
+    <span class="alert-text">{{msg}}</span>
+    
+</div>

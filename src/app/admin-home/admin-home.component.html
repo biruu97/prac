@@ -1,0 +1,105 @@
+<div>
+    <h2>Welcome to Admin Home Page</h2>
+</div>
+<br><br>
+<button class="btn btn-success" (click)="toggleHistories1()">Applications For Approval</button>
+<button class="btn btn-success" (click)="toggleHistories2()">Income Details Of Applicants</button>
+<button class="btn btn-success" (click)="toggleHistories3()">Loan Details Of Applicants</button>
+<button class="btn btn-success" (click)="toggleHistories4()">Documents Of Applicants</button>
+    <br><br><br>
+<label>Enter your remarks here:</label>
+<input type="text" [(ngModel)]="remarks"/>
+<br><br>
+    <div *ngIf="flag1==1">
+        <table>
+            <tr>
+                <th>Application ID</th>
+                <th>Approval</th>
+            </tr>
+        
+            <tr *ngFor="let rec of needApproval">
+                <td>{{rec.appId}}</td>
+                <td><button class="btn btn-success" (click)="approve(rec)" >Approve</button></td>
+                <td><button class="btn btn-danger" (click)="disapprove(rec)">Reject</button></td>
+                
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf="flag2==1">
+        <table>
+            <tr>
+                <th>Application ID</th>
+                <th>Property Location</th>
+                <th>Property name</th>
+                <th>Property Amount</th>
+                <th>Employee Type</th>
+                <th>Retirement Age</th>
+                <th>Organization Type</th>
+                <th>Employer</th>
+            </tr>
+        
+            <tr *ngFor="let inc of incDet">
+                <td>{{inc.appId}}</td>
+                <td>{{inc.propLoc}}</td>
+                <td>{{inc.propName}}</td>
+                <td>{{inc.propAmount}}</td>
+                <td>{{inc.empType}}</td>
+                <td>{{inc.retirementAge}}</td>
+                <td>{{inc.orgType}}</td>
+                <td>{{inc.employer}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf="flag3==1">
+        <table>
+            <tr>
+                <th>Application ID</th>
+                <th>Maximum Limit Grantable</th>
+                <th>Amount Requested</th>
+                <th>Tenure</th>
+                <th>Rate Of Interest</th>
+            </tr>
+        
+            <tr *ngFor="let l of loanDet">
+                <td>{{l.appId}}</td>
+                <td>{{l.maxAmtGrantable}}</td>
+                <td>{{l.loanAsked}}</td>
+                <td>{{l.tenure}}</td>
+                <td>{{l.rate}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div *ngIf="flag4==1">
+        <table>
+            <tr>
+                <th>Aadhar No</th>
+                <th>PAN No</th>
+                <th>Aadhar</th>
+                <th>PAN</th>
+                <th>LOA</th>
+                <th>LOC</th>
+                <th>VOTERID</th>
+                <th>Sale Agreement</th>
+            </tr>
+        
+            <tr *ngFor="let d of currdoc">
+                <td>{{d.aadharNumber}}</td>
+                <td>{{d.PAN}}</td>
+                <td><a [href]="link+d.aadharDoc" target="_blank">download aadhar</a></td>
+                <td><a [href]="link+d.PANDoc" target="_blank">download pan</a></td>
+                <td><a [href]="link+d.LOA" target="_blank">download LOA</a></td>
+                <td><a [href]="link+d.LOC" target="_blank">download LOC</a></td>
+                <td><a [href]="link+d.voterID" target="_blank">download Voter Card</a></td>
+                <td><a [href]="link+d.agreement" target="_blank">download Sales Agreement</a></td>
+            </tr>
+                
+        </table>
+    </div>
+
+    <br><br>
+    {{msg}}
+    <br><br>

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="homeloanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="applications">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="loginid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="documents">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="bigint" Nullable="false" />
+    <Property Name="aadharNumber" Type="bigint" Nullable="false" />
+    <Property Name="PANDoc" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="aadharDoc" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="PAN" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="LOA" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="LOC" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="voterID" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="agreement" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="incomeDetails">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="bigint" Nullable="false" />
+    <Property Name="propLoc" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="propName" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="propAmount" Type="int" Nullable="false" />
+    <Property Name="empType" Type="binary" MaxLength="1" Nullable="false" />
+    <Property Name="retirementAge" Type="int" Nullable="false" />
+    <Property Name="orgType" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="employer" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="loan">
+    <Key>
+      <PropertyRef Name="loanId" />
+    </Key>
+    <Property Name="loanId" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="amountApproved" Type="int" Nullable="false" />
+    <Property Name="noOfEmiTotal" Type="int" Nullable="false" />
+    <Property Name="noOfEmiLeft" Type="int" Nullable="false" />
+    <Property Name="loanDateStart" Type="datetime" Nullable="false" />
+    <Property Name="remarks" Type="nvarchar" MaxLength="1" />
+    <Property Name="adminId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="loanDetails">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="bigint" Nullable="false" />
+    <Property Name="maxAmtGrantable" Type="int" Nullable="false" />
+    <Property Name="loanAsked" Type="int" Nullable="false" />
+    <Property Name="tenure" Type="int" Nullable="false" />
+    <Property Name="rate" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="privilege" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="personalDetails">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="bigint" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="middleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phoneNumber" Type="bigint" Nullable="false" />
+    <Property Name="DOB" Type="datetime" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="nationality" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="userBankDetails">
+    <Key>
+      <PropertyRef Name="appId" />
+    </Key>
+    <Property Name="appId" Type="bigint" Nullable="false" />
+    <Property Name="accNo" Type="bigint" Nullable="false" />
+    <Property Name="ifsc" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__applicati__login__4222D4EF">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="applications" Type="Self.applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="applications">
+        <PropertyRef Name="loginid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__documents__appId__571DF1D5">
+    <End Role="applications" Type="Self.applications" Multiplicity="1" />
+    <End Role="documents" Type="Self.documents" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="applications">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="documents">
+        <PropertyRef Name="appId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__incomeDet__appId__5441852A">
+    <End Role="applications" Type="Self.applications" Multiplicity="1" />
+    <End Role="incomeDetails" Type="Self.incomeDetails" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="applications">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="incomeDetails">
+        <PropertyRef Name="appId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__loan__adminId__48CFD27E">
+    <End Role="login" Type="Self.login" Multiplicity="1" />
+    <End Role="loan" Type="Self.loan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="login">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="loan">
+        <PropertyRef Name="adminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__loan__loanId__47DBAE45">
+    <End Role="applications" Type="Self.applications" Multiplicity="1" />
+    <End Role="loan" Type="Self.loan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="applications">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="loan">
+        <PropertyRef Name="loanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__loanDetai__appId__4E88ABD4">
+    <End Role="applications" Type="Self.applications" Multiplicity="1" />
+    <End Role="loanDetails" Type="Self.loanDetails" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="applications">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="loanDetails">
+        <PropertyRef Name="appId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__personalD__appId__6FE99F9F">
+    <End Role="applications" Type="Self.applications" Multiplicity="1" />
+    <End Role="personalDetails" Type="Self.personalDetails" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="applications">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="personalDetails">
+        <PropertyRef Name="appId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__userBankD__appId__4BAC3F29">
+    <End Role="applications" Type="Self.applications" Multiplicity="1" />
+    <End Role="userBankDetails" Type="Self.userBankDetails" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="applications">
+        <PropertyRef Name="appId" />
+      </Principal>
+      <Dependent Role="userBankDetails">
+        <PropertyRef Name="appId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="homeloanModelStoreContainer">
+    <EntitySet Name="applications" EntityType="Self.applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="documents" EntityType="Self.documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="incomeDetails" EntityType="Self.incomeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loan" EntityType="Self.loan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loanDetails" EntityType="Self.loanDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="personalDetails" EntityType="Self.personalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userBankDetails" EntityType="Self.userBankDetails" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__applicati__login__4222D4EF" Association="Self.FK__applicati__login__4222D4EF">
+      <End Role="login" EntitySet="login" />
+      <End Role="applications" EntitySet="applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__documents__appId__571DF1D5" Association="Self.FK__documents__appId__571DF1D5">
+      <End Role="applications" EntitySet="applications" />
+      <End Role="documents" EntitySet="documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__incomeDet__appId__5441852A" Association="Self.FK__incomeDet__appId__5441852A">
+      <End Role="applications" EntitySet="applications" />
+      <End Role="incomeDetails" EntitySet="incomeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__loan__adminId__48CFD27E" Association="Self.FK__loan__adminId__48CFD27E">
+      <End Role="login" EntitySet="login" />
+      <End Role="loan" EntitySet="loan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__loan__loanId__47DBAE45" Association="Self.FK__loan__loanId__47DBAE45">
+      <End Role="applications" EntitySet="applications" />
+      <End Role="loan" EntitySet="loan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__loanDetai__appId__4E88ABD4" Association="Self.FK__loanDetai__appId__4E88ABD4">
+      <End Role="applications" EntitySet="applications" />
+      <End Role="loanDetails" EntitySet="loanDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__personalD__appId__6FE99F9F" Association="Self.FK__personalD__appId__6FE99F9F">
+      <End Role="applications" EntitySet="applications" />
+      <End Role="personalDetails" EntitySet="personalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__userBankD__appId__4BAC3F29" Association="Self.FK__userBankD__appId__4BAC3F29">
+      <End Role="applications" EntitySet="applications" />
+      <End Role="userBankDetails" EntitySet="userBankDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

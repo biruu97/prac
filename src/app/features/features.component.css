@@ -1,0 +1,21 @@
+#a{
+    background-color: cornflowerblue;
+    height: 50px;
+    color:black;
+    padding: 5%;
+}
+
+#b{
+    text-align: center;
+    border: cadetblue;
+    color: crimson;
+    border-style: groove;
+    padding-top:5%;
+    padding-bottom: 5%;
+    margin-left: 170px;
+    margin-right:170px;
+}
+li{
+    margin-left: 100px;
+    margin-right: 100px;
+}

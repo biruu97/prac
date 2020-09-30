@@ -1,0 +1,31 @@
+#r{
+    margin-left: 100px;
+    margin-right:100px;
+    height:800px;
+    background-color: lightgoldenrodyellow;
+    padding-left: 10px;
+    font-size: large;
+   }
+
+#b{
+position: fixed;
+bottom:0;
+width: 100%;
+}
+
+#t{
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+h1{
+    text-align: center;
+    background-color: lightsalmon;
+    color: black;
+    height: 100px;
+    padding:30px;
+}
+h2{
+    text-align: center;
+    color: crimson;
+}

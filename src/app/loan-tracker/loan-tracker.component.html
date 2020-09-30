@@ -1,0 +1,21 @@
+<div>
+    <h2>Loan Tracker</h2>
+    <Br><Br>
+    <label class="form-control">Enter Application ID:</label>
+    <input type="number" class="form-control" [(ngModel)]="tracker.appid"/>
+    <label class="form-control">Enter Mobile No:</label>
+    <input type="number" class="form-control" [(ngModel)]="tracker.phone"/>
+    <br>
+    <button class="btn btn-primary" (click)="fetchLoans()">Submit</button>
+    <br><br>
+    <table *ngIf="check==1" border="1">
+        <tr>
+            <th>App ID</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>{{app.appId}}</td>
+            <td>{{app.status}}</td>
+        </tr>
+    </table>
+</div>

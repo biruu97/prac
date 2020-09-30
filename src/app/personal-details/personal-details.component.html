@@ -1,0 +1,38 @@
+
+<div>
+    <label class="form-control">First Name</label>
+    <input type="text" required  [(ngModel)]="firstname">
+    <label class="form-control">Middle Name</label>
+    <input type="text" [(ngModel)]="middlename">
+    <label class="form-control">Last Name</label>
+    <input type="text" required [(ngModel)]="lastname">
+    <label class="form-control">Phone Number</label>
+    <input type="number" required [(ngModel)]="phone">
+    <label class="form-control">Date of Birth</label>
+    <input type="date" required [(ngModel)]="dob">
+    <label class="form-control">Gender</label>
+    <select class="form-control" [(ngModel)]="gender">
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="others">others</option>
+    </select>
+    <label class="form-control">Nationality</label>
+    <select class="form-control" [(ngModel)]="nationality">
+        <option value="indian">Indian</option>
+        <option value="nri">NRI</option>
+    </select>
+    <div *ngIf="flag==1">
+        <label class="form-control" >Email</label>
+        <input type="email" required [(ngModel)]="email">
+        <label class="form-control">Password</label>
+        <input type="password" required [(ngModel)]="password">
+        <label class="form-control">Retype Password</label>
+        <input type="password" required [(ngModel)]="repass">
+        <span class="alert-text" *ngIf="password!=repass">passwords dont match</span>
+    </div>
+    <br><br>
+    <button class="btn btn-success" (click)="submit()">SUBMIT</button>
+    <br><br>
+    {{msg}}
+    <br><br>
+</div>

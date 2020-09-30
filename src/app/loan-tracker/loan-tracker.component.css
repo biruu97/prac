@@ -1,0 +1,25 @@
+div
+{
+    margin-left: 350px;
+    margin-right: 500px;
+    background-color: ghostwhite;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+h2
+{
+    margin-left: 120px;
+}
+
+table
+{
+    margin-left: 140px;
+}
+
+button
+{
+    margin-left: 160px;
+}
