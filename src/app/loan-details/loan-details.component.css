@@ -1,0 +1,29 @@
+div
+{
+    padding-left: 350px;
+    padding-right: 400px;
+    background-image: url('https://wallpaperplay.com/walls/full/7/2/9/20920.jpg');
+    margin-bottom: 50px;
+}
+
+
+h1
+{
+    margin-left: 130px;
+}
+
+label
+{
+    margin-left: 170px;
+}
+
+button
+{
+    margin-left: 170px;
+}
+
+span
+{
+    margin-left: 180px;
+    font-size: 35px;
+}

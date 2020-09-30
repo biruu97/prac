@@ -30,6 +30,7 @@ import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { DocUploadComponent } from './doc-upload/doc-upload.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AcknowledgementPageComponent } from './acknowledgement-page/acknowledgement-page.component';
 
 
 var myRoutes:Routes=[
@@ -39,6 +40,7 @@ var myRoutes:Routes=[
   {path:'adminlogin',component:AdminLoginComponent},
   {path:'personaldetails',component:PersonalDetailsComponent},
   {path:'incomedetails',component:IncomeDetailsComponent},
+  {path:'ack',component:AcknowledgementPageComponent},
   {path:'forgot',component:ForgotPasswordComponent},
   {path:'loandetails',component:LoanDetailsComponent},
   {path:'adminhome',component:AdminHomeComponent},
@@ -76,6 +78,7 @@ var myRoutes:Routes=[
     DocUploadComponent,
     BankDetailsComponent,
     ForgotPasswordComponent,
+    AcknowledgementPageComponent,
   ],
   imports: [
     BrowserModule,

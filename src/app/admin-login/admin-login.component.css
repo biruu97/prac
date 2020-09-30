@@ -1,12 +1,13 @@
 div
 {
-    margin-left: 400px;
-    margin-right: 400px;
+    padding-left: 400px;
+    padding-right: 400px;
+    background-image: url('https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
 
 h2
 {
-    margin-left: 520px;
+    margin-left: 150px;
 }
 span
 {
@@ -16,6 +17,17 @@ span
 }
 button
 {
-    margin-left: 570px;
+    position: relative;
+    float: left;
+    margin-left: 80px;
 }
 
+.divBtn
+{
+    margin-left: 480px;
+}
+
+label
+{
+    margin-left: 180px;
+}

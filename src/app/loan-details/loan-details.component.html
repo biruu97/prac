@@ -1,21 +1,28 @@
 <div>
+    <h1>Loan Details</h1>
+    <br><br>
     <label>Current income</label>
-    <input type="number" [(ngModel)]="currsal"/>
+    <br>
+    <input class="form-control" type="number" [(ngModel)]="currsal"/>
     <br>
     <button class="btn btn-success" (click)="checkElib()">check</button>
-    <br>
-    <h2>You are eligible for a loan of net Rs={{eligibleamount}}</h2>
+    <br><br>
+    <h2>Loan Eligibility Rs={{eligibleamount}}</h2>
     <label>Rate</label>
     <input type="range" min="5" max="20" step="0.5" value="10" [(ngModel)]="rate"/>
+    <br>
     <span>{{rate}}%</span>
      <br>
     <label>Tenure</label>
-    <input type="number" [(ngModel)]="tenure">
+    <br>
+    <input class="form-control" type="number" [(ngModel)]="tenure">
 
      <br>
     <label>Loan Require Amount</label>
     <input type="range" min="0" [max]="eligibleamount" [(ngModel)]="loanwanted"/>
-    <span>Rs.{{loanwanted}}</span>
     <br>
+    <span>Rs.{{loanwanted}}</span>
+    <br><br>
     <button class="btn btn-primary" (click)="goNext()" [disabled]="eligibleamount==0">submit</button>
+    <br><br>
 </div>

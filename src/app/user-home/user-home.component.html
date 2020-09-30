@@ -1,9 +1,12 @@
+<div class="panel img">
 <h1>Welcome</h1>
 <br><br>
+<div class="allBtn">
 <button class="btn btn-success btnapply" (click)="toggleHistories1()">Show/Hide History</button>
 <button class="btn btn-success btnapply" (click)="toggleHistories2()">Show/Hide Bank Details</button>
 <button class="btn btn-success btnapply" (click)="toggleHistories3()">Show/Hide Loan Details</button>
 <button class="btn btn-primary btnapply" (click)="applyNow()">Apply Now</button>
+</div>
 <br><br><br>
 
 <div *ngIf="flag1==1 && PrevRec!=null">
@@ -46,4 +49,5 @@
             <td>{{ld.loanAsked}}</td>
         </tr>
     </table>
+</div>
 </div>

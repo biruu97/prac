@@ -1,28 +1,30 @@
 <div>
-    <label class="form-control">Property Location</label>
+    <h1>Property and Employment</h1>
+    <br><br>
+    <label>Property Location</label>
     <input type="text" required class="form-control"  [(ngModel)]="proploc"/>
-
-    <label class="form-control" >Property Name</label>
+    <br>
+    <label>Property Name</label>
     <input type="text" required class="form-control" [(ngModel)]="propname"/>
-
-    <label class="form-control" >Property Amount</label>
+    <br>
+    <label>Property Amount</label>
     <input type="number" required  [(ngModel)]="propamt" class="form-control"/>
-
-    <label class="form-control">Organization Type</label>
+    <br>
+    <label>Organization Type</label>
     <select required class="form-control" [(ngModel)]="orgtype">
         <option value="public">Public Sector</option>
         <option value="private">Private Sector</option>
     </select>
-
-    <label class="form-control" >Retirement Age</label>
+    <br>
+    <label>Retirement Age</label>
     <input type="number" required  [(ngModel)]="retage" class="form-control"/>
-
-    <label class="form-control" >Employer Type</label>
+    <br>
+    <label>Employer Type</label>
     <input type="text" required  [(ngModel)]="emptype" class="form-control"/>
-
-    <label class="form-control" >Employer Name</label>
+    <br>
+    <label>Employer Name</label>
     <input type="text" required class="form-control" [(ngModel)]="empname"/>
-
+    <br>
     <button class="btn btn-success" (click)="goToNxtPg()">SUBMIT</button>
-
+    <br><br>
 </div>

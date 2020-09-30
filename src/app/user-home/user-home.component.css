@@ -1,8 +1,6 @@
-div
+.img
 {
-    margin-left:250px;
-    margin-right:250px;
-    padding: 20px;
+    background-image: url('https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
 
 h1
@@ -13,10 +11,12 @@ h1
 .btnapply
 {
     float:left;
+    position: relative;
     margin-left: 100px;
 }
 
 table,th,td
 {
-    border:1px solid black;
+    border:2px solid black;
 }
+

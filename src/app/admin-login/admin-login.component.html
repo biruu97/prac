@@ -1,18 +1,17 @@
-
+<div class="wholeContainer">
     <h2>Admin Login</h2>
-    
-        <div>
-          <label class="form-control">Email:</label>
+    <br><br>
+          <label>Email:</label>
           <input type="email" class="form-control" required [(ngModel)]="user.email">
-        </div>
-        <div>
-            <label class="form-control">Password:</label>
+        <br>
+            <label>Password:</label>
             <input type="password" class="form-control" required [(ngModel)]="user.password">
-        </div>
         <br>
         <br>
-      <button class="btn btn-primary" (click)="doLogin()">Submit</button>
+          <button class="btn btn-primary" (click)="doLogin()">Submit</button>
+          <button class="btn btn-danger" (click)="forgot()">Forgot Password?</button>
       <br>
       <br>
       <br>
       <span>{{msg}}</span>
+</div>

@@ -134,7 +134,7 @@ export class DocUploadComponent implements OnInit {
      this.http2.post("http://localhost:61494/api/SubmitApplication",this.newcompleteapplication).subscribe((data)=>{
        console.log("application submitted");
        this.newcompleteapplication=new NewApplication();
-       this.sd.accno=null;
+       this.sd.accno=this.appid;
        this.sd.ifsc=null;
        this.sd.currUser=null;
        this.sd.firstname=null;
@@ -155,7 +155,7 @@ export class DocUploadComponent implements OnInit {
        this.sd.tenure=null
        this.sd.rate=null;
        this.sd.eligibleamount=null;
-       this.myRoute.navigate(['*']);
+       this.myRoute.navigate(['ack']);
      });
 
     

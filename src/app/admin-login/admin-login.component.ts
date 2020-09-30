@@ -19,6 +19,11 @@ msg:string;
 
   ngOnInit(): void {
   }
+
+  forgot()
+  {
+    this.myRoute.navigate(['forgot']);
+  }
   doLogin()
   {
     this.msg="";

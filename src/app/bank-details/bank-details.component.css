@@ -1,0 +1,31 @@
+div
+{
+    background-image: url('https://wallpaperplay.com/walls/full/7/2/9/20920.jpg');
+    padding-left: 350px;
+    padding-right: 350px;
+}
+
+h1
+{
+    margin-left: 150px;
+}
+
+#accountHolder
+{
+    margin-left: 150px;
+}
+
+#accNo
+{
+    margin-left: 200px;
+}
+
+#ifsc
+{
+    margin-left: 220px;
+}
+
+button
+{
+    margin-left: 200px;
+}

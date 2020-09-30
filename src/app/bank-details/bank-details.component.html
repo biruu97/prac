@@ -1,8 +1,15 @@
 <div>
-    <label>Account No</label>
-    <input type="number" required [(ngModel)]="accno">
-    <label>IFSC</label>
-    <input type="text" required [(ngModel)]="ifsc">
-
+    <h1>Bank Details</h1>
+    <br><br>
+    <label id="accountHolder">Enter Account Holders Name</label>
+    <input type="text" class="form-control"/>
+    <br>
+    <label id="accNo">Account No</label>
+    <input class="form-control" type="number" required [(ngModel)]="accno">
+    <br>
+    <label id="ifsc">IFSC</label>
+    <input class="form-control" type="text" required [(ngModel)]="ifsc">
+    <br><br>
     <button class="btn btn-primary" (click)="goToFinalPg()">submit</button>
+    <br><br><br>
 </div>

@@ -1,33 +1,45 @@
 
-<div>
-    <label class="form-control">First Name</label>
-    <input type="text" required  [(ngModel)]="firstname">
-    <label class="form-control">Middle Name</label>
-    <input type="text" [(ngModel)]="middlename">
-    <label class="form-control">Last Name</label>
-    <input type="text" required [(ngModel)]="lastname">
-    <label class="form-control">Phone Number</label>
-    <input type="number" required [(ngModel)]="phone">
-    <label class="form-control">Date of Birth</label>
-    <input type="date" required [(ngModel)]="dob">
-    <label class="form-control">Gender</label>
+<div class="outer">
+    <h1>Personal Details</h1>
+    <br>
+    <label>First Name</label>
+    <input class="form-control" type="text" required  [(ngModel)]="firstname">
+    <br>
+    <label>Middle Name</label>
+    <input class="form-control" type="text" [(ngModel)]="middlename">
+    <br>
+    <label>Last Name</label>
+    <input class="form-control" type="text" required [(ngModel)]="lastname">
+    <br>
+    <label>Phone Number</label>
+    <input class="form-control" type="number" required [(ngModel)]="phone">
+    <br>
+    <label>Date of Birth</label>
+    <input class="form-control" type="date" required [(ngModel)]="dob">
+    <br>
+    <label>Gender</label>
     <select class="form-control" [(ngModel)]="gender">
         <option value="male">male</option>
         <option value="female">female</option>
         <option value="others">others</option>
     </select>
-    <label class="form-control">Nationality</label>
+    <br>
+    <label >Nationality</label>
     <select class="form-control" [(ngModel)]="nationality">
         <option value="indian">Indian</option>
         <option value="nri">NRI</option>
     </select>
+    <br>
     <div *ngIf="flag==1">
-        <label class="form-control" >Email</label>
-        <input type="email" required [(ngModel)]="email">
-        <label class="form-control">Password</label>
-        <input type="password" required [(ngModel)]="password">
-        <label class="form-control">Retype Password</label>
-        <input type="password" required [(ngModel)]="repass">
+        <label>Email</label>
+        <input type="email" class="form-control" required [(ngModel)]="email">
+        <br>
+        <label>Password</label>
+        <input type="password" class="form-control" required [(ngModel)]="password">
+        <br>
+        <label>Retype Password</label>
+        <br>
+        <input type="password" class="form-control" required [(ngModel)]="repass">
         <span class="alert-text" *ngIf="password!=repass">passwords dont match</span>
     </div>
     <br><br>
