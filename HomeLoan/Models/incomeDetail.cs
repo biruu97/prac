@@ -30,6 +30,7 @@ namespace HomeLoan.Models
         public int retirementAge { get; set; }
         [DataMember]
         public string orgType { get; set; }
+        [DataMember]
         public string employer { get; set; }
     
         public virtual application application { get; set; }

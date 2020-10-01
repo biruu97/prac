@@ -36,6 +36,7 @@ export class AdminHomeComponent implements OnInit {
         this.needApproval=data;
         this.userService.getIncomeDetailsForApproval(this.currUser).subscribe((data1)=>{
           this.incDet=data1;
+          console.log(this.incDet);
           this.userService.getLoanDetailsForApproval(this.currUser).subscribe((data2)=>{
             this.loanDet=data2;
             this.userService.getDocuments(this.currUser).subscribe((data3)=>{

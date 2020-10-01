@@ -1,0 +1,31 @@
+.img
+{
+    background-image: url('https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+
+h1
+{
+    margin-left: 500px;
+}
+
+.btnapply
+{
+    float:left;
+    position: relative;
+    margin-left: 100px;
+}
+
+table,th,td
+{
+    border:2px solid black;
+}
+
+.divTable
+{
+    padding-left: 300px;
+}
+
+label
+{
+    padding-left:350px;
+}

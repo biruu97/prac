@@ -3,17 +3,16 @@ div
     padding-left: 350px;
     padding-right: 400px;
     margin-bottom: 50px;
-    
-    background-image: url('https://thewallpaper.co//wp-content/uploads/2016/10preview/amazing-high-resolution-images-for-desktop-wallpaper-desktop-images-background-photos-download-hd-windows-wallpaper-samsung-iphone-1920x1080.jpg');
+    background-color: aliceblue;    
 }
 
 
 label
 {
     margin-left: 120px;
-    color: white;
+    color:black;
 }
-h1{color: whitesmoke;}
+h1{color:black}
 button
 {
     margin-left: 120px;

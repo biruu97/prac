@@ -8,8 +8,8 @@
 <button class="btn btn-primary btnapply" (click)="applyNow()">Apply Now</button>
 </div>
 <br><br><br>
-
-<div *ngIf="flag1==1 && PrevRec!=null">
+<br>
+<div *ngIf="flag1==1 && PrevRec!=null" class="divTable">
     <table>
         <tr>
             <th>Application ID</th>
@@ -22,7 +22,8 @@
         </tr>
     </table>
 </div>
-<div *ngIf="flag2==1 && BankDet!=null">
+<br><br><br><br>
+<div *ngIf="flag2==1 && BankDet!=null" class="divTable">
     <table>
         <tr>
             <th>Application Id</th>
@@ -37,7 +38,8 @@
         </tr>
     </table>
 </div>
-<div *ngIf="flag3==1 && LoanDet!=null">
+<br><br><br><br>
+<div *ngIf="flag3==1 && LoanDet!=null" class="divTable">
     <table>
         <tr>
             <th>Application Id</th>
@@ -50,4 +52,5 @@
         </tr>
     </table>
 </div>
+<br><br>
 </div>

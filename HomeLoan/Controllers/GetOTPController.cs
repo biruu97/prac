@@ -19,7 +19,7 @@ namespace HomeLoan.Controllers
             var toAddress = new MailAddress("birojitmondal2@gmail.com", "ToName");
             const string fromPassword = "testforlti";
             const string subject = "otp for project";
-            string body = new Random().Next(101).ToString();
+            string body = new Random().Next(10000,99999).ToString();
             
 
             var smtp = new SmtpClient

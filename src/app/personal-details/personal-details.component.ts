@@ -34,6 +34,10 @@ recieve;
       
    }
 
+   gologin()
+   {
+     this.myRoute1.navigate(['userlogreg']);
+   }
   submit()
   {
       if(this.user==null)

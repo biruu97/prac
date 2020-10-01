@@ -2,7 +2,7 @@ div.outer
 {
     padding-left: 400px;
     padding-right: 450px;
-    background-image: url('https://images.pexels.com/photos/1054289/pexels-photo-1054289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-color: whitesmoke;
     margin-bottom: 50px;
 }
 
@@ -11,7 +11,8 @@ label
     margin-left: 120px;
 }
 
+
 button
 {
-    margin-left: 120px;
+    margin-left: 50px;
 }

@@ -1,16 +1,15 @@
-<div>
+<div class="panel img">
     <h2>Welcome to Admin Home Page</h2>
-</div>
 <br><br>
-<button class="btn btn-success" (click)="toggleHistories1()">Applications For Approval</button>
-<button class="btn btn-success" (click)="toggleHistories2()">Income Details Of Applicants</button>
-<button class="btn btn-success" (click)="toggleHistories3()">Loan Details Of Applicants</button>
-<button class="btn btn-success" (click)="toggleHistories4()">Documents Of Applicants</button>
+<button class="btn btn-success btnapply" (click)="toggleHistories1()">Applications For Approval</button>
+<button class="btn btn-success btnapply" (click)="toggleHistories2()">Income Details Of Applicants</button>
+<button class="btn btn-success btnapply" (click)="toggleHistories3()">Loan Details Of Applicants</button>
+<button class="btn btn-success btnapply" (click)="toggleHistories4()">Documents Of Applicants</button>
     <br><br><br>
 <label>Enter your remarks here:</label>
 <input type="text" [(ngModel)]="remarks"/>
 <br><br>
-    <div *ngIf="flag1==1">
+    <div *ngIf="flag1==1" class="divTable">
         <table>
             <tr>
                 <th>Application ID</th>
@@ -25,8 +24,8 @@
             </tr>
         </table>
     </div>
-
-    <div *ngIf="flag2==1">
+    <br><br>
+    <div *ngIf="flag2==1" class="divTable">
         <table>
             <tr>
                 <th>Application ID</th>
@@ -51,8 +50,8 @@
             </tr>
         </table>
     </div>
-
-    <div *ngIf="flag3==1">
+    <br><br>
+    <div *ngIf="flag3==1" class="divTable">
         <table>
             <tr>
                 <th>Application ID</th>
@@ -73,7 +72,7 @@
     </div>
 
 
-    <div *ngIf="flag4==1">
+    <div *ngIf="flag4==1" class="divTable">
         <table>
             <tr>
                 <th>Aadhar No</th>
@@ -103,3 +102,4 @@
     <br><br>
     {{msg}}
     <br><br>
+    </div>
