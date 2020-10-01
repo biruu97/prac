@@ -3,47 +3,58 @@
     <h1>Personal Details</h1>
     <br>
     <label>First Name</label>
-    <input class="form-control" type="text" required  [(ngModel)]="firstname">
+    <input class="form-control" type="text" required  [(ngModel)]="firstname" #f="ngModel">
+    <span *ngIf="f.errors && f.touched">firstname cant be empty</span>
+    <br>
     <br>
     <label>Middle Name</label>
     <input class="form-control" type="text" [(ngModel)]="middlename">
     <br>
     <label>Last Name</label>
-    <input class="form-control" type="text" required [(ngModel)]="lastname">
-    <br>
+    <input class="form-control" type="text" required [(ngModel)]="lastname" #l="ngModel">
+    <span *ngIf="l.errors && f.touched">lastname cant be empty</span>
+    <br><br>
     <label>Phone Number</label>
-    <input class="form-control" type="number" required [(ngModel)]="phone">
-    <br>
+    <input class="form-control" type="number" required [(ngModel)]="phone" #p="ngModel" pattern="[0-9]{10}">
+    <span *ngIf="p.errors && !p.pristine">must be of length 10</span>
+    <br><br>
     <label>Date of Birth</label>
-    <input class="form-control" type="date" required [(ngModel)]="dob">
+    <input class="form-control" type="date" required [(ngModel)]="dob" #d="ngModel">
+    <span *ngIf="d.errors && d.touched">must be of length 10</span>
+    <br>
     <br>
     <label>Gender</label>
-    <select class="form-control" [(ngModel)]="gender">
+    <select class="form-control" required [(ngModel)]="gender">
         <option value="male">male</option>
         <option value="female">female</option>
         <option value="others">others</option>
     </select>
     <br>
+    <br>
     <label >Nationality</label>
-    <select class="form-control" [(ngModel)]="nationality">
+    <select class="form-control" [(ngModel)]="nationality" required>
         <option value="indian">Indian</option>
         <option value="nri">NRI</option>
     </select>
     <br>
-    <div *ngIf="flag==1">
+    <br>
+    <div [hidden]="flag==0">
         <label>Email</label>
-        <input type="email" class="form-control" required [(ngModel)]="email">
+        <input type="email" class="form-control" required [(ngModel)]="email" #e="ngModel">
+        <span *ngIf="e.errors && e.touched">must enter a valid email</span>
+        <br>
         <br>
         <label>Password</label>
-        <input type="password" class="form-control" required [(ngModel)]="password">
+        <input type="password" class="form-control" required [(ngModel)]="password" #pass="ngModel">
+        <span *ngIf="pass.length<4">minlength is 4</span>
         <br>
         <label>Retype Password</label>
         <br>
-        <input type="password" class="form-control" required [(ngModel)]="repass">
+        <input type="password" class="form-control" required [(ngModel)]="repass" #r="ngModel">
         <span class="alert-text" *ngIf="password!=repass">passwords dont match</span>
     </div>
     <br><br>
-    <button class="btn btn-success" (click)="submit()">SUBMIT</button>
+    <button class="btn btn-success" [disabled]="password!=repass || (flag==1 && !pass.touched) || (flag==0 && !f.touched)" (click)="submit()">SUBMIT</button>
     <button class="btn btn-primary" (click)="gologin()">Go back to Login</button>
     <br><br>
     {{msg}}
