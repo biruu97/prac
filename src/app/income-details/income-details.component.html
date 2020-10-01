@@ -20,7 +20,10 @@
     <input type="number" required  [(ngModel)]="retage" class="form-control"/>
     <br>
     <label>Employer Type</label>
-    <input type="text" required  [(ngModel)]="emptype" class="form-control"/>
+    <select required class="form-control" [(ngModel)]="emptype">
+        <option value="fulltime">Full time</option>
+        <option value="parttime">Part time</option>
+    </select>
     <br>
     <label>Employer Name</label>
     <input type="text" required class="form-control" [(ngModel)]="empname"/>
