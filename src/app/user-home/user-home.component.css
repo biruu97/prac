@@ -15,12 +15,10 @@ h1
     margin-left: 100px;
 }
 
-table,th,td
-{
-    border:2px solid black;
-}
+
 
 .divTable
 {
-    padding-left: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
