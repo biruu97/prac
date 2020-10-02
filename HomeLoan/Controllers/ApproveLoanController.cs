@@ -30,7 +30,7 @@ namespace HomeLoan.Controllers
             newLoan.status = "current";
             newLoan.loanDateStart = System.DateTime.Now;
             newLoan.amountApproved = newloandet.loanAsked;
-            newLoan.noOfEmiTotal = newloandet.tenure * 12;
+            newLoan.noOfEmiTotal = hle.loanDetails.ToList().Find(item => item.appId == newLoan.loanId).tenure * 12;
             newLoan.noOfEmiLeft = newLoan.noOfEmiTotal;
 
             hle.loans.Add(newLoan);
